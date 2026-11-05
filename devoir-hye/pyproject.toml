@@ -1,0 +1,20 @@
+[project]
+name = "devoir-hye"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "mimiphisto", email = "annabouffier08@gmail.com" }
+]
+requires-python = ">=3.9"
+dependencies = [
+    "pandas>=2.3.3",
+    "requests>=2.32.5",
+]
+
+[project.scripts]
+devoir-hye = "devoir_hye:main"
+
+[build-system]
+requires = ["uv_build>=0.13.6,<0.14.0"]
+build-backend = "uv_build"

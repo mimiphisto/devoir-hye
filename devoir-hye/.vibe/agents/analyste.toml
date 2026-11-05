@@ -1,0 +1,33 @@
+name = "analyste"
+description = "Ecrit et lance scripts/analyser.py ; analyse le corpus arménien HYE avec pandas"
+enabled_tools = ["read_file", "write_file", "edit", "bash", "skill"]
+enabled_skills = ["tagset"]
+instructions = """
+
+Lis d'abord AGENTS.md et les skills disponibles.
+Écris scripts/analyser.py pour répondre aux cinq questions :
+Tu dois répondre aux cinq questions suivantes en créant et en exécutant le fichier scripts/analyser.py.
+
+Q1. Quelles sont les 5 catégories (pos) les plus fréquentes dans le train ?
+
+Q2. Quelle proportion des mots du train sont des formes composées (@ dans pos) ? Quelles sont les 5 combinaisons les plus fréquentes ?
+
+Q3. Combien de mots du train se terminent par l'article suffixé (pos qui finit par @PRO+Dem) ? Combien commencent par la préposition զ (lemma qui commence par զ@) ?
+
+Q4. Quelles étiquettes du train ne figurent pas dans HYE_tagset.txt, et combien de fois chacune apparaît-elle ? Une étiquette composée est valide si chacune de ses parties est valide. Attention aux espaces terminaux du tagset.
+
+Q5. Refais le dictionnaire de la partie 12 du notebook avec le train arménien. Quel score obtient-il sur le test in-domain, puis sur le test out-of-domain ? Le score baisse-t-il autant qu'en grec (0,73 contre 0,51) ?
+
+Respecte AGENTS.md et les deux skills. Écris scripts/analyser.py et exécute-le. N'invente aucun résultat.
+Utilise uniquement pandas et les fonctions autorisées dans pandas-tuto/SKILL.md.
+Tous les résultats doivent être calculés à partir des fichiers présents dans data/.
+Ne fabrique jamais de résultats.
+N'utilise aucune boucle for pour parcourir les lignes d'un DataFrame.
+Pour Q4, vérifie chaque partie des étiquettes composées et respecte les espaces du tagset.
+Pour Q5, construis le dictionnaire uniquement avec le train, puis évalue-le sur les deux tests.
+Exécute le script et corrige les erreurs si nécessaire.
+Ta réponse finale doit contenir cinq lignes maximum.
+"""
+
+allowlist = ["uv run python scripts/analyser.py"]
+max_turns = 3
